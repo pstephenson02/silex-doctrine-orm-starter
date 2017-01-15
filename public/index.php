@@ -10,4 +10,15 @@ foreach ($config as $key => $value) {
     $app[$key] = $value;
 }
 
+if ($app['debug']) {
+    $app->register(
+        new \Silex\Provider\WebProfilerServiceProvider(),
+        [
+            'profiler.cache_dir' => __DIR__ . '/../var/cache/profiler',
+            'profiler.mount_prefix' => '/_profiler'
+        ]
+    );
+    $app->register(new \Sorien\Provider\DoctrineProfilerServiceProvider());
+}
+
 $app->run();
