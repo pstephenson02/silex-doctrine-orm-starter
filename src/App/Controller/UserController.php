@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Repository\UserRepository;
+use App\Resource\UserResource;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Class UserController
@@ -24,13 +26,26 @@ class UserController
         $this->userRepository = $userRepository;
     }
 
-    public function getUsers()
+    /**
+     * @return JsonResponse
+     */
+    public function getUsers(): JsonResponse
     {
-        // @todo
+        $users = $this->userRepository->findAll();
+        $response = [];
+        foreach ($users as $user) {
+            $response[] = UserResource::transform($user);
+        }
+        return JsonResponse::create($response);
     }
 
-    public function getUser($id)
+    /**
+     * @param int $id
+     * @return JsonResponse
+     */
+    public function getUser(int $id): JsonResponse
     {
-        // @todo
+        $user = $this->userRepository->find($id);
+        return JsonResponse::create($user);
     }
 }
