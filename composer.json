@@ -1,0 +1,14 @@
+{
+    "name": "pstephenson02/silex-doctrine-orm-starter",
+    "description": "A starter project for Silex and Doctrine ORM",
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.0",
+        "silex/silex": "~2.0",
+        "dflydev/doctrine-orm-service-provider": "^2.0"
+    },
+    "autoload": {
+        "psr-0": { "App": "src/" }
+    }
+}
