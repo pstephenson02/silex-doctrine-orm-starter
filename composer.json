@@ -1,6 +1,6 @@
 {
     "name": "pstephenson02/silex-doctrine-orm-starter",
-    "description": "A starter project for Silex and Doctrine ORM",
+    "description": "An opinionated starter project for Silex and Doctrine ORM",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
