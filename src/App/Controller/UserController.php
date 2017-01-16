@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Repository\UserRepository;
 use App\Resource\UserResource;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Class UserController
@@ -47,5 +49,21 @@ class UserController
     {
         $user = $this->userRepository->find($id);
         return JsonResponse::create(UserResource::transform($user));
+    }
+
+    /**
+     * @param int $id
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function updateUser(int $id, Request $request): JsonResponse
+    {
+        $user = $this->userRepository->find($id);
+        if (!$user) {
+            throw new NotFoundHttpException(sprintf('User %d does not exist', $id));
+        }
+        $params = json_decode($request->getContent(), true);
+        $updated = $this->userRepository->update($user, $params);
+        return JsonResponse::create(UserResource::transform($updated));
     }
 }
