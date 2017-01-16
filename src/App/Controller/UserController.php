@@ -46,6 +46,6 @@ class UserController
     public function getUser(int $id): JsonResponse
     {
         $user = $this->userRepository->find($id);
-        return JsonResponse::create($user);
+        return JsonResponse::create(UserResource::transform($user));
     }
 }
