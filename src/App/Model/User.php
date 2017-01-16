@@ -10,19 +10,11 @@ use Doctrine\ORM\Mapping as ORM;
  * @package App\Model
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @ORM\Table(name="user")
+ * @ORM\HasLifecycleCallbacks
  */
 class User
 {
     use TimestampableEntity;
-
-    /**
-     * User constructor.
-     */
-    public function __construct()
-    {
-        $this->setCreatedAt();
-        $this->setUpdatedAt();
-    }
 
     /**
      * @var int $id
