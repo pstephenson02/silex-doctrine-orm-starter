@@ -12,6 +12,10 @@ foreach ($config as $key => $value) {
     $app[$key] = $value;
 }
 
+/** @var \Doctrine\ORM\EntityManager $em */
+$em = $app['orm.em'];
+$em->getEventManager()->addEventSubscriber(new \App\EventListener\UserSubscriber());
+
 $helperSet = ConsoleRunner::createHelperSet($app['orm.em']);
 $cli = ConsoleRunner::createApplication($helperSet);
 $cli->run();
