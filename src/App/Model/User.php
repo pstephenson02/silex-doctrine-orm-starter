@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use App\TimestampableEntity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -12,6 +13,17 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class User
 {
+    use TimestampableEntity;
+
+    /**
+     * User constructor.
+     */
+    public function __construct()
+    {
+        $this->setCreatedAt();
+        $this->setUpdatedAt();
+    }
+
     /**
      * @var int $id
      * @ORM\Column(type="integer")
