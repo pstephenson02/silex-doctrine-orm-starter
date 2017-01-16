@@ -2,6 +2,8 @@
 
 namespace App\Model;
 
+use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Class UserHistory
  * @package App\Model
