@@ -52,6 +52,8 @@ class UserControllerProvider implements ControllerProviderInterface
                 return null;
             })
             ->assert('id', '\d+');
+        $factory->delete('/{id}', 'user.controller:deleteUser')
+            ->assert('id', '\d+');
 
         return $factory;
     }

@@ -16,7 +16,7 @@ class UserRepository extends EntityRepository
      * @param array $data
      * @return User
      */
-    public function create(array $data)
+    public function create(array $data): User
     {
         return $this->update(new User(), $data);
     }
@@ -26,7 +26,7 @@ class UserRepository extends EntityRepository
      * @param array $data
      * @return User
      */
-    public function update(User $user, array $data)
+    public function update(User $user, array $data): User
     {
         if (array_key_exists('email', $data)) {
             $user->setEmail($data['email']);
@@ -35,5 +35,14 @@ class UserRepository extends EntityRepository
         $this->getEntityManager()->flush();
 
         return $user;
+    }
+
+    /**
+     * @param User $user
+     */
+    public function delete(User $user)
+    {
+        $this->getEntityManager()->remove($user);
+        $this->getEntityManager()->flush();
     }
 }

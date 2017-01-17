@@ -6,6 +6,7 @@ use App\Repository\UserRepository;
 use App\Resource\UserResource;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
@@ -76,5 +77,19 @@ class UserController
         $params = json_decode($request->getContent(), true);
         $updated = $this->userRepository->update($user, $params);
         return JsonResponse::create(UserResource::transform($updated));
+    }
+
+    /**
+     * @param int $id
+     * @return Response
+     */
+    public function deleteUser(int $id): Response
+    {
+        $user = $this->userRepository->find($id);
+        if (!$user) {
+            throw new NotFoundHttpException(sprintf('User %d does not exist', $id));
+        }
+        $this->userRepository->delete($user);
+        return new Response('', 204);
     }
 }
