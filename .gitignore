@@ -1,3 +1,5 @@
 vendor/
 var/
+tests/coverage/
 app/parameters.php
+phpunit.xml
