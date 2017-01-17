@@ -52,6 +52,17 @@ class UserController
     }
 
     /**
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function createUser(Request $request): JsonResponse
+    {
+        $params = json_decode($request->getContent(), true);
+        $user = $this->userRepository->create($params);
+        return JsonResponse::create(UserResource::transform($user));
+    }
+
+    /**
      * @param int $id
      * @param Request $request
      * @return JsonResponse

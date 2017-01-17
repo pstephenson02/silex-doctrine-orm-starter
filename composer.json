@@ -7,7 +7,8 @@
         "php": "^7.0",
         "silex/silex": "~2.0",
         "dflydev/doctrine-orm-service-provider": "^2.0",
-        "sorien/silex-dbal-profiler": "^2.0"
+        "sorien/silex-dbal-profiler": "^2.0",
+        "symfony/validator": "^3.2"
     },
     "autoload": {
         "psr-0": { "App": "src/" }

@@ -13,6 +13,15 @@ use App\Model\User;
 class UserRepository extends EntityRepository
 {
     /**
+     * @param array $data
+     * @return User
+     */
+    public function create(array $data)
+    {
+        return $this->update(new User(), $data);
+    }
+
+    /**
      * @param User $user
      * @param array $data
      * @return User
