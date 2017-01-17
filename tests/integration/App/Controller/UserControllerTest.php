@@ -32,6 +32,7 @@ class UserControllerTest extends WebTestCase
         $this->assertNotEmpty($client->getResponse()->getContent());
     }
 
+    // @todo: assert UserHistory was created
     public function testCreateUser()
     {
         $client = $this->createClient();
@@ -49,6 +50,7 @@ class UserControllerTest extends WebTestCase
         $this->assertJson($client->getResponse()->getContent());
     }
 
+    // @todo: assert UserHistory was created
     public function testUpdateUser()
     {
         $updatedUser = ['email' => 'georgemichael@arrestedevelopment.com'];
