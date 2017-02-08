@@ -1,6 +1,7 @@
 # silex-doctrine-orm-starter
 
 **Project Requirements**: PHP7, Composer
+
 [Silex](http://silex.sensiolabs.org/) is a PHP micro-framework based on Symfony components. Silex can be a pleasure to work with for developers that enjoy more control over the structure of their applications. However, large projects that use Silex often require more disciplined patterns and sometimes need a full-fledged ORM. While Silex does not officially support [Doctrine ORM](http://www.doctrine-project.org/projects/orm.html), [dflydev-doctrine-orm-service-provider](https://github.com/dflydev/dflydev-doctrine-orm-service-provider) is an excellent extension for which to provide your Silex app with ORM behavior. This project goes a step futher. Silex-doctrine-orm-starter provides examples of extendible patterns and methods that I have found useful in my experience using Silex and Doctrine ORM. A few highlights include:
 
   - Doctrine ORM annotation mapping
@@ -33,7 +34,7 @@ You may also decide to use silex-doctrine-orm-starter as a skeleton project for 
     ```
     $ cp app/parameters.dist.php app/parameters.php
     ```
-    Open the `parameters.php` file with your text editor of choice and replace the defaults with your own database settings. Changing `debug` to `true` will provide the Silex Web Profiler toolbar on requests - this is very useful during development. If you have not already created a new MySQL database, you should do so now. If you are unsure how to do this, refer to these DigitalOcean tutorials [^1].
+    Open the `parameters.php` file with your text editor of choice and replace the defaults with your own database settings. Changing `debug` to `true` will provide the Silex Web Profiler toolbar on requests - this is very useful during development. If you have not already created a new MySQL database, you should do so now. If you are unsure how to do this, refer to these DigitalOcean tutorials [^1][^2].
     
 4. Create the database schema:
     ```
@@ -79,6 +80,7 @@ curl -v localhost:8000/user/
 In this case, I passed the `-v` curl flag to show the HTTP headers. Because I set `debug` to `true` in my `app/parameters.php` file, notice that I now get the header `X-Debug-Token-Link`. If we follow the link shown in this header with a web browser, we'll find the web profiler page with helpful information about this request.
 
 **Seeding Users**
+
 You can also create users with the command line tool by using the `orm:seed:users` command:
 ```
 $ ./bin/doctrine orm:seed:users
@@ -107,4 +109,4 @@ In the future, I will write more documentation explaining other features found i
 
 
 [^1]: https://www.digitalocean.com/community/tutorials/a-basic-mysql-tutorial
-https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
+[^2]: https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql
