@@ -22,11 +22,13 @@ You may also decide to use silex-doctrine-orm-starter as a skeleton project for 
 ### Installation
 
 1. Clone this repository:
+
     ```
     $ git clone git@github.com:pstephenson02/silex-doctrine-orm-starter.git
     $ cd silex-doctrine-orm-starter/
     ```
 2. Install dependencies:
+
     ```
     $ composer install -o
     ```
