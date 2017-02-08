@@ -17,16 +17,16 @@ The starter also includes some Silex specific goodies:
 
 It is unlikely that you will need every component of this starter package. If you have an existing Silex app, you may decide to use this project as a reference guide for how to structure your application code or for how to utilize some of Doctrine ORM's high level features. For more information on Doctrine's features, check out its [excellent documentation](http://docs.doctrine-project.org/projects/doctrine-orm/en/latest/).
 
-You may also decide to use silex-doctrine-orm-starter as a skeleton project for a new Silex app. It makes an excellent starting point specificically for JSON-based REST apis backed by a MySQL database. To begin a new project, follow the installation instructions below.
+You may also decide to use silex-doctrine-orm-starter as a skeleton project for a new Silex app. It makes a great starting point specificically for JSON-based REST APIs backed by a MySQL database. To begin a new project, follow the installation instructions below.
 
 ### Installation
 
-1. Clone this repository
+1. Clone this repository:
     ```
     $ git clone git@github.com:pstephenson02/silex-doctrine-orm-starter.git
     $ cd silex-doctrine-orm-starter/
     ```
-2. Install dependencies
+2. Install dependencies:
     ```
     $ composer install -o
     ```
