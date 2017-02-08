@@ -34,7 +34,7 @@ You may also decide to use silex-doctrine-orm-starter as a skeleton project for 
     ```
     $ cp app/parameters.dist.php app/parameters.php
     ```
-    Open the `parameters.php` file with your text editor of choice and replace the defaults with your own database settings. Changing `debug` to `true` will provide the Silex Web Profiler toolbar on requests - this is very useful during development. If you have not already created a new MySQL database, you should do so now. If you are unsure how to do this, refer to these DigitalOcean tutorials [^1][^2].
+    Open the `parameters.php` file with your text editor of choice and replace the defaults with your own database settings. Changing `debug` to `true` will provide the Silex Web Profiler toolbar on requests - this is very useful during development. If you have not already created a new MySQL database, you should do so now. If you are unsure how to do this, refer to these DigitalOcean tutorials [^1], [^2].
     
 4. Create the database schema:
     ```
